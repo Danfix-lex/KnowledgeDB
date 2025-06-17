@@ -1,0 +1,5 @@
+.venv/
+.env
+.idea/
+uv.lock
+db.sqlite3
