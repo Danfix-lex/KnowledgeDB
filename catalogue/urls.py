@@ -8,19 +8,19 @@ from .views import BookViewSet, BookImageViewSet
 router = routers.DefaultRouter()
 router.register("books", BookViewSet, basename="books" )
 
-router.register("images", BookImageViewSet, basename="images")
+router.register("images", BookImageViewSet, basename="book-images")
 
 urlpatterns = [
     # path('books', views.get_books),
+
 
     path('', include(router.urls)),
 
     path('authors/', views.AddAuthorView.as_view(), name='add_author'),
 
-    path('authors/<int:pk>/', views.GetUpdateDeleteAuthorView.as_view(), name='get_update_and_delete_author'),
+    path('authors/<int:pk>/', views.GetUpdateDeleteAuthorView.as_view()),
 
-    path('images/<int:pk>/', views.image_detail, name='book-image-detail'),
-    #
+    # path('images/<int:pk>/', views.image_detail, name='book-image-detail'),
     # path('delete/authors/<int:pk>', views.delete_author, name='delete_author'),
     #
     # path('get/authors/', views.get_authors, name='get_authors'),
